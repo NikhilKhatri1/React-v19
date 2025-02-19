@@ -1,35 +1,45 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from 'react';
+import Props from './props';
 
-function App() {
-  const [count, setCount] = useState(0)
+const App = () => {
+  const movieDetails1 = {
+    title: "Avatar",
+    rating: 5,
+    isCool: true,
+    actors: [{ title: 'Sam Worthington' }, { title: 'Zoe Saldana' }]
+  };
+
+  const movieDetails2 = {
+    title: "Inception",
+    rating: 4.7,
+    isCool: true,
+    actors: [{ title: 'Leonardo DiCaprio' }, { title: 'Joseph Gordon-Levitt' }]
+  };
+
+  const movieDetails3 = {
+    title: "The Matrix",
+    rating: 4.9,
+    isCool: true,
+    actors: [{ title: 'Keanu Reeves' }, { title: 'Laurence Fishburne' }]
+  };
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <div className='p-2 m-2 border border-gray-200 w-[300px] rounded-xl bg-linear-[90deg] from-purple-500 via-pink-500 to-red-500'>
+        <h2 className='border-1 border-gray-200 rounded-full p-1 bg-gray-50 text-slate-950 font-semibold font-light w-[150px] text-center'>App Component</h2>
+        <Props details={movieDetails1} />
+        <Props details={movieDetails2} />
+        <Props details={movieDetails3} />
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
+      <div className='p-2 m-2 border border-gray-200 w-[300px] rounded-xl bg-cover bg-radial-[circle_at_100%_-50%] from-sky-300 via-sky-200 to-indigo-700 to-75%'>
+        <h2 className='border-1 border-gray-200 rounded-full p-1 bg-gray-50 text-slate-950 font-semibold font-light w-[150px] text-center'>App Component</h2>
+        <Props details={movieDetails1} />
+        <Props details={movieDetails2} />
+        <Props details={movieDetails3} />
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <h1 className='text-8xl font-bold font-mono bg-linear-to-tr from-gray-900 to-gray-600 text-transparent bg-clip-text'>Text Color Styles</h1>
     </>
-  )
-}
+  );
+};
 
-export default App
+export default App;
