@@ -26,13 +26,13 @@ const App = () => {
   return (
     <>
       <div className='p-2 m-2 border border-gray-200 w-[300px] rounded-xl bg-linear-[90deg] from-purple-500 via-pink-500 to-red-500'>
-        <h2 className='border-1 border-gray-200 rounded-full p-1 bg-gray-50 text-slate-950 font-semibold font-light w-[150px] text-center'>App Component</h2>
+        <h2 className='border-1 border-gray-200 rounded-full p-1 bg-gray-50 text-slate-950 font-semibold w-[150px] text-center'>App Component</h2>
         <Props details={movieDetails1} />
         <Props details={movieDetails2} />
         <Props details={movieDetails3} />
       </div>
       <div className='p-2 m-2 border border-gray-200 w-[300px] rounded-xl bg-cover bg-radial-[circle_at_100%_-50%] from-sky-300 via-sky-200 to-indigo-700 to-75%'>
-        <h2 className='border-1 border-gray-200 rounded-full p-1 bg-gray-50 text-slate-950 font-semibold font-light w-[150px] text-center'>App Component</h2>
+        <h2 className='border-1 border-gray-200 rounded-full p-1 bg-gray-50 text-slate-950 font-semibold w-[150px] text-center'>App Component</h2>
         <Props details={movieDetails1} />
         <Props details={movieDetails2} />
         <Props details={movieDetails3} />
