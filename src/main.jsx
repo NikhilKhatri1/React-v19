@@ -9,6 +9,7 @@ import ParentComponent from './Day-1/Props/ParentComponent'
 import AxiosFetching from './Day-2/FetchingData/AxiosFetching'
 import FetchingData from './Day-2/Fetch/FetchingData'
 import AppForContextAPi from './Day-2/Main/AppForContextAPi'
+import NewMain from './Day-3/MainData/NewMain'
 
 createRoot(document.getElementById('root')).render(
   <div>
@@ -19,6 +20,7 @@ createRoot(document.getElementById('root')).render(
     {/* <FetchingData /> */}
     {/* <AxiosFetching /> */}
     {/* <FetchingData /> */}
-    <AppForContextAPi />
+    {/* <AppForContextAPi /> */}
+    <NewMain />
   </div>
 )
