@@ -10,6 +10,8 @@ import AxiosFetching from './Day-2/FetchingData/AxiosFetching'
 import FetchingData from './Day-2/Fetch/FetchingData'
 import AppForContextAPi from './Day-2/Main/AppForContextAPi'
 import NewMain from './Day-3/MainData/NewMain'
+import UseReducerrHook from './Day-4/UseReducer/UseReducerrHook'
+import App from './Day-4/TODO/App/App'
 
 createRoot(document.getElementById('root')).render(
   <div>
@@ -21,6 +23,7 @@ createRoot(document.getElementById('root')).render(
     {/* <AxiosFetching /> */}
     {/* <FetchingData /> */}
     {/* <AppForContextAPi /> */}
-    <NewMain />
+    {/* <UseReducerrHook /> */}
+    <App />
   </div>
 )
