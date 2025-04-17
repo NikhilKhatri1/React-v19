@@ -17,8 +17,8 @@ const UseFetch = (url, option = {}) => {
             setLoading(false);
         } catch (error) {
             console.log((error));
-            setLoading(false);
             setError(error);
+            setLoading(false);
         }
     }
 
@@ -27,11 +27,7 @@ const UseFetch = (url, option = {}) => {
     }, [url])
 
 
-    return (
-        data,
-        loading,
-        error
-    )
+    return { data, loading, error }
 }
 
 export default UseFetch

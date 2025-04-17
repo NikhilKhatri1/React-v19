@@ -11,7 +11,7 @@ const Reciepes = () => {
     return <h1>{error}</h1>
   }
 
-  console.log(data)
+  console.log(data);
   return (
     <div>
       <h1>Reciepes List is Here!</h1>
