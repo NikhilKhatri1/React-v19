@@ -1,6 +1,11 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { useNavigate, useParams } from 'react-router-dom';
+import { contextData } from '../context/Context';
 
 const Product = ({ product }) => {
+  const navigate = useNavigate();
+  const { handleAddToCart } = useContext(contextData);
+
   return (
     <div key={product.id} className='bg-white shadow-lg p-5 m-5 rounded-md'>
       <div className='w-full h-[200px] flex justify-center items-center rounded-xl bg-red-100'>
@@ -14,8 +19,14 @@ const Product = ({ product }) => {
         <p className='text-gray-500 overflow-y-auto text-wrap h-[100px]'>{product.description}</p>
       </div>
       <div className='flex justify-between items-center mt-2 px-5'>
-        <button className='bg-amber-300 p-2 text-md font-bold text-white rounded-lg me-2'>buy now</button>
-        <button className='bg-amber-300 p-2 text-md font-bold text-white rounded-lg'>cart</button>
+        <button
+          onClick={() => navigate(`/products/${product.id}`)}
+          className='bg-amber-300 p-2 text-md font-bold text-white rounded-lg me-2'
+        >buy now</button>
+        <button
+          onClick={() => handleAddToCart(product)}
+          className='bg-amber-300 p-2 text-md font-bold text-white rounded-lg'
+        >cart</button>
       </div>
     </div>
   )

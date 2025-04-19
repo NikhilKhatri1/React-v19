@@ -4,8 +4,8 @@ import Product from './Product';
 
 const Products = () => {
   const { data, loading, error } = useContext(contextData);
-  if (loading) return <h1>Loading....</h1>
-  if (error) return <h1>{error}</h1>
+  if (loading) return <h1 className='text-center text-4xl'>Loading....</h1>
+  if (error) return <h1 className='text-center text-4xl'>{error}</h1>
 
   return (
     <div className='text-center bg-gray-100 p-5 h-[100vh]'>

@@ -4,8 +4,8 @@ import Layout from './Layout/Layout'
 import Home from './pages/Home'
 import NotFound from './pages/NotFound'
 import Products from './pages/Products'
-import Product from './pages/Product'
 import Carts from './pages/Carts'
+import ProductDetail from './pages/ProductDetail'
 
 const App = () => {
   const Router = useRoutes([
@@ -15,7 +15,7 @@ const App = () => {
       children: [
         { index: true, element: <Home /> },
         { path: "products", element: <Products /> },
-        { path: "products/:id", element: <Product /> },
+        { path: "products/:id", element: <ProductDetail /> },
         { path: "cart", element: <Carts /> }
       ]
     },
