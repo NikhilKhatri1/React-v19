@@ -14,7 +14,8 @@ import UseReducerrHook from './Day-4/UseReducer/UseReducerrHook'
 import App from './Day-4/TODO/App/App'
 import Form from './Day-4/FormInReact/Form'
 import InputChange from './Day-4/InputChange/InputChange'
-import Main from './Day-5/Main'
+import Main from './Day-6/Main'
+// import Main from './Day-5/Main'
 // import Main from './Day-4/components/Main'
 
 createRoot(document.getElementById('root')).render(
@@ -33,6 +34,7 @@ createRoot(document.getElementById('root')).render(
     {/* <InputChange /> */}
     {/* <Main /> */}
     {/* <Form /> */}
+    {/* <Main /> */}
     <Main />
   </div>
 )
