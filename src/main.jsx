@@ -16,7 +16,7 @@ import Form from './Day-4/FormInReact/Form'
 import InputChange from './Day-4/InputChange/InputChange'
 // import Main from './Day-5/Main'
 // import Main from './Day-4/components/Main'
-import Main from './Day-7/Main'
+import Main from './Day-8/Main'
 
 createRoot(document.getElementById('root')).render(
   <div>
