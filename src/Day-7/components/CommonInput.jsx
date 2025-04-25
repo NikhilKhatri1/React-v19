@@ -10,6 +10,7 @@ const CommonInput = ({ type, value, placeholder, className, onChange, name }) =>
             name={name}
             onChange={onChange}
             className={className || "border rounded-lg p-1 w-full block text-black mt-2"}
+            required
         />
     )
 }
