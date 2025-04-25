@@ -1,15 +1,19 @@
 const express = require("express");
 const router = require("./routes/userRoutes");
 const connectDB = require("./db/mongoDB");
+const cors = require("cors")
 require("dotenv").config();
+const bodyParser = require("body-parser")
 
 const app = express();
-app.use(express.json());
+app.use(bodyParser.json());
+
 
 // db connection
 connectDB();
 const PORT = process.env.PORT || 8000;
 
+app.use(cors());
 
 app.get("/", (req, res) => {
     res.send("Backend is working");
@@ -19,6 +23,6 @@ app.get("/", (req, res) => {
 // user login router
 app.use("/api/user", router);
 
-app.listen(PORT, '0.0.0.0', () => {
+app.listen(PORT, () => {
     console.log(`Server is Ready at http://localhost:${PORT}`);
 })

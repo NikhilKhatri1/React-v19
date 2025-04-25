@@ -1,12 +1,15 @@
 import React from 'react'
 import { BrowserRouter } from 'react-router-dom'
 import App from './App'
+import Context from './context/Context'
 
 const Main = () => {
   return (
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
+    <Context>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </Context>
   )
 }
 
