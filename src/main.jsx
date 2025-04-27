@@ -15,6 +15,7 @@ import App from './Day-4/TODO/App/App'
 import Form from './Day-4/FormInReact/Form'
 import InputChange from './Day-4/InputChange/InputChange'
 import Main from './Day-11/frontend/Main'
+import CodeSplitting from './Day-12/CodeSplitting'
 // import Main from './Day-5/Main'
 // import Main from './Day-4/components/Main'
 // import Main from './Day-7/Main'
@@ -38,6 +39,7 @@ createRoot(document.getElementById('root')).render(
     {/* <Main /> */}
     {/* <Main /> */}
     {/* <Main /> */}
-    <Main />
+    {/* <Main /> */}
+    <CodeSplitting />
   </div>
 )
