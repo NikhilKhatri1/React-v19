@@ -1,18 +1,18 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
-import { handleCountIncrementAction } from '../store/slices/counter';
+import { handleIncreaseAction } from '../store/slices/counter';
 
 const CounterButton = () => {
   const dispatch = useDispatch();
   const handleClick = () => {
-    dispatch(handleCountIncrementAction());
+    dispatch(handleIncreaseAction());
   }
   return (
     <div>
       <button
         onClick={handleClick}
-        className='p-2 bg-gray-50 hover:border-1 hover:border-bg-gray-800 rounded-lg'
-      >Count++</button>
+        className='border-1 bg-gray-50 p-2 rounded-lg'
+      >Increament</button>
     </div>
   )
 }
