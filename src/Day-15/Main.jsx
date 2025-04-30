@@ -1,11 +1,12 @@
 import React from 'react'
 import App from './App'
+import TodoContextProvider from './context/TodoContext'
 
 const Main = () => {
     return (
-        <div>
+        <TodoContextProvider>
             <App />
-        </div>
+        </TodoContextProvider>
     )
 }
 
