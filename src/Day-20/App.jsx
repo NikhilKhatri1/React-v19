@@ -2,6 +2,7 @@ import React from 'react'
 import Dashboard from './components/Dashboard'
 import { Route, Routes } from 'react-router-dom'
 import StorePage from './components/StorePage'
+import StoreSpecificPage from './components/StoreSpecificPage'
 
 const App = () => {
     return (
