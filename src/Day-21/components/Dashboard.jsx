@@ -1,12 +1,14 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { AppContext } from '../context/AppContext'
+import { useNavigate } from 'react-router-dom';
 
 const Dashboard = () => {
-  const { productList, setProductList, loading } = useContext(AppContext);
+  const { productList, setProductList, loading, handleBuyProducts, handleCartProducts } = useContext(AppContext);
   const [rating, setRating] = useState(1);
   const [search, setSearch] = useState('');
   const [price, setPrice] = useState(1);
   const [filteredList, setFilteredList] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     setFilteredList(productList);
@@ -36,6 +38,22 @@ const Dashboard = () => {
     setFilteredList(filtered);
   }
 
+  const handleClick = () => {
+    navigate("/store")
+  }
+
+  const handleBuy = (productId) => {
+    const AddToBuyProduct = productList.find(product => product.id === Number(productId));
+    handleBuyProducts(AddToBuyProduct);
+    alert(`${AddToBuyProduct.title} has been added to your Order!`);
+    navigate("/store")
+  }
+  const handleCart = (productId) => {
+    const AddToCartProduct = productList.find(product => product.id === Number(productId));
+    handleCartProducts(AddToCartProduct);
+    alert(`${AddToCartProduct.title} has been added to your Cart!`);
+  }
+
   useEffect(() => {
     FilterProduct();
   }, [search, rating, price])
@@ -58,7 +76,7 @@ const Dashboard = () => {
           </div>
         </div>
         <div className='border-1 border-gray-100 px-2 py-2 rounded-lg shadow-sm w-full'>
-          <div className='my-5'>
+          <div className='my-5 flex justify-between'>
             <form onSubmit={(e) => e.preventDefault()}>
               <input
                 onChange={handleSearchInput}
@@ -69,9 +87,13 @@ const Dashboard = () => {
               />
               <button className='bg-black px-3 py-1 text-white ms-3' type='submit'>Search</button>
             </form>
+
+            <div>
+              <button onClick={handleClick} className='border-1 bg-yellow-300 px-5 py-2  rounded-lg border-yellow-600 text-lg font-bold'>Store</button>
+            </div>
           </div>
           <h1 className='text-center text-4xl font-bold my-5'>Product List</h1>
-          <div className='grid grid-cols-4 w-full gap-2'>
+          <div className='grid grid-cols-5 w-full gap-2'>
 
             {
               loading
@@ -79,7 +101,7 @@ const Dashboard = () => {
                 : (
                   filteredList.length > 0
                     ? filteredList.map((product) => (
-                      <div key={product.id} className='bg-gray-50 px-5 py-3 border-1 border-gray-100 w-50'>
+                      <div key={product.id} className='bg-gray-50 px-5 py-3 border-1 border-gray-100 w-60'>
                         <div className='flex flex-col items-center'>
                           <img className='w-30 h-30 border-1 border-gray-200 bg-pink-100 rounded-lg hover:scale-105 transition-all duration-300 ease-in-out' src={product.thumbnail} alt={product.title} />
                           <div className='w-full flex justify-between my-2 border-1 px-1 py-[2px] rounded-lg border-amber-800 items-center'>
@@ -90,8 +112,8 @@ const Dashboard = () => {
                             <p className='text-[12px] text-ellipsis overflow-hidden w-30 whitespace-nowrap font-bold'>Rating: {product.rating}</p>
                           </div>
                           <div className='flex justify-between gap-2'>
-                            <button className='bg-orange-200 px-2 py-1 rounded-xl ring-inset ring-2 ring-orange-300 hover:ring-orange-500 hover:bg-orange-300'>Buy</button>
-                            <button className='bg-orange-200 px-2 py-1 rounded-xl ring-inset ring-2 ring-orange-300 hover:ring-orange-500 hover:bg-orange-300'>Add to Cart</button>
+                            <button onClick={() => handleBuy(product.id)} className='bg-orange-200 px-2 py-1 rounded-xl ring-inset ring-2 ring-orange-300 hover:ring-orange-500 hover:bg-orange-300'>Buy</button>
+                            <button onClick={() => handleCart(product.id)} className='bg-orange-200 px-2 py-1 rounded-xl ring-inset ring-2 ring-orange-300 hover:ring-orange-500 hover:bg-orange-300'>Add to Cart</button>
                           </div>
                         </div>
                       </div>

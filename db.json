@@ -1,0 +1,19 @@
+{
+    "posts": [
+        {
+            "id": "1",
+            "title": "Sunder Pachai Interview 1",
+            "body": "Discussing the future"
+        },
+        {
+            "id": "2",
+            "title": "marque review Tesla",
+            "body": "Tesla tesla"
+        },
+        {
+            "id": "3",
+            "title": "Ai in 2024",
+            "body": "Impact on daily life"
+        }
+    ]
+}
